@@ -1,0 +1,25 @@
+<div class="container role-select-box">
+    <div fxLayout="row" fxLayout.md="row" fxLayout.sm="column" fxLayout.xs="column" fxFlex="84%" fxFlex.md="90%" fxFlex.sm="100%"
+      fxFlex.xs="100%">
+      <div fxFlex="35%" fxFlex.md="40%" fxFlex.sm="100%" fxFlex.xs="100%">
+        <div>
+          <h1 class="color-white h1">Welcome to Acceleration VMS</h1>
+          <p class="sub-welcome-text">
+            Connecting hiring managers, workers and staffing suppliers through a single, real-time application. AccelerationVMS streamlines
+            hiring processes.
+          </p>
+        </div>
+      </div>
+      <div fxFlex="40%" fxFlex.md="40%" fxFlex.sm="100%" fxFlex.xs="100%" class="mlp-10">
+        <div class="role-prompt">Select Your Role</div>
+        <mat-nav-list class="role-list-item">
+          <a mat-list-item [routerLink]="['/login/login']">
+            <span mat-line>Panel User</span>
+          </a>
+          <a mat-list-item>
+            <span mat-line>HR User</span>
+          </a>
+        </mat-nav-list>
+      </div>
+    </div>
+  </div>
