@@ -1,0 +1,96 @@
+<div class="h-100">
+    <div class="row">
+        <h1 class="h1">Add New Candidate</h1>
+    </div>
+    <div class="border-2">
+        <div class="p-10">
+            <div class="minheight-100">
+                <form class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Candidate Id</mat-label>
+                        <input matInput value="0001234">
+                    </mat-form-field>
+
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>First name</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Last Name</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>                    
+
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Mobile #</mat-label>
+                                    <input matInput placeholder="+91 xxxxxxxxxx">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Alternate #</mat-label>
+                                    <input matInput placeholder="+91 xxxxxxxxxx">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p>
+                        <mat-form-field class="fileupload">
+                            <div>
+                                <mat-toolbar>
+                                    <!-- Display files names -->
+                                    <input matInput value="Upload Resume" readonly name="name" />
+
+                                    <!-- Browse Button -->
+                                    <button mat-flat-button color="primary">
+                                        Browse File
+                                    </button>
+                                </mat-toolbar>
+
+                                <!-- Fetch selected filed on change -->
+                                <input type="file" #fileInput id="uploadFile"
+                                 (change)="uploadFileEvt($event)"
+                                    name="uploadFile" multiple="multiple" accept="image/*" />
+                            </div>
+                        </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field class="fileupload">
+                            <div>
+                                <mat-toolbar>
+                                    <!-- Display files names -->
+                                    <input matInput value="Upload Picture" readonly name="name" />
+
+                                    <!-- Browse Button -->
+                                    <button mat-flat-button color="primary">
+                                        Browse File
+                                    </button>
+                                </mat-toolbar>
+
+                                <!-- Fetch selected filed on change -->
+                                <input type="file" #fileInput id="uploadFile"
+                                 (change)="uploadPicEvt($event)"
+                                    name="uploadFile" multiple="multiple" accept="image/*" />
+                            </div>
+                        </mat-form-field>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row p-10">
+        <button mat-raised-button color="primary">Create</button>
+    </div>
+</div>
