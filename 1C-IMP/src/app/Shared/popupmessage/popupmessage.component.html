@@ -1,0 +1,125 @@
+<div class="h-100">
+    <div class="row">
+        <h1 class="h1">Choose Your Available Time</h1>
+    </div>
+    <div class="border-2">
+        <div class="p-10">
+            <div class="minheight-100">
+                <fieldset class="pt-10">
+                    <legend>Select Time</legend>
+                    <div style="margin-bottom: 20px;">
+                        <mat-radio-group aria-label="Select an option" class="labFB" (change)="radioTimeChange($event)">
+                            <mat-radio-button value="1">First Half</mat-radio-button>
+                            <mat-radio-button class="pl-10" value="2">Second Half</mat-radio-button>
+                            <mat-radio-button class="pl-10" value="3">AnyTime</mat-radio-button>
+                            <mat-radio-button class="pl-10" value="4">Specific Time</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div style="margin-bottom: 20px;" *ngIf="radTimeoption == 4">
+                        <div class="d-inBlock">
+                            <label for="fname">Start:</label>
+                            <input type="time" class="pl-10" id="fname" name="fname"><br><br>
+                            <!-- <p-calendar [(ngModel)]="value" showTime="true" hourFormat="12"></p-calendar> -->
+                            <!-- <p-calendar [(ngModel)]="date8" [timeOnly]="true" inputId="timeonly"></p-calendar> -->
+                        </div>
+                        <div class="d-inBlock ">
+                            <label for="lname">End:</label>
+                            <input type="time" class="pl-10" id="lname" name="lname"><br><br>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <mat-divider></mat-divider>
+            </div>
+            <div class="minheight-100">
+                <fieldset class="pt-10">
+                    <legend>Recurrence Pattern</legend>
+                    <div class="">
+                        <mat-radio-group aria-label="Select an option" class="labFB" (change)="radioChange($event)">
+                            <mat-radio-button value="1">To Choose Date Range</mat-radio-button>
+                            <mat-radio-button class="pl-10" value="2">To Choose Specific Date</mat-radio-button>
+                            <mat-radio-button class="pl-10" value="3">To Choose multiple Date</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </fieldset>
+                <mat-divider></mat-divider>
+            </div>
+            <div *ngIf="radoption == 1" class="minheight-100">
+                <fieldset class="pt-10">
+                    <legend>Recurrence Range</legend>
+
+                    <div class="">
+                        <div class="d-inBlock">
+                            <mat-form-field>
+                                <mat-label>Choose and End Date</mat-label>
+                                <mat-date-range-input [rangePicker]="picker">
+                                    <input matStartDate formControlName="start" placeholder="Start date">
+                                    <input matEndDate formControlName="end" placeholder="End date">
+                                </mat-date-range-input>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-date-range-picker #picker></mat-date-range-picker>
+
+                                <!-- <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error> -->
+                            </mat-form-field>
+                        </div>
+                        <div class="pt-10">
+                            <section class="">
+                                <mat-checkbox class="label pl-10">Sunday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Monday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Tuesday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Wednesday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Thursday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Friday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Saturday</mat-checkbox>
+                            </section>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div *ngIf="radoption == 2" class="minheight-100">
+                <fieldset class="pt-10">
+                    <legend>Specific Date</legend>
+                    <div class="">
+                        <div class="d-inBlock pl-10">
+                            <mat-form-field>
+                                <mat-label>Choose Specific date</mat-label>
+                                <input matInput [matDatepicker]="picker">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div *ngIf="radoption == 3" class="minheight-100">
+                <fieldset class="pt-10">
+                    <legend>Recurrence Range</legend>
+
+                    <div class="">
+                        <div class="d-inBlock">
+
+                            <p-calendar [(ngModel)]="dates" selectionMode="multiple" [readonlyInput]="true"
+                                inputId="multiple"></p-calendar>
+
+                        </div>
+                        <div class="pt-10">
+                            <section class="">
+                                <mat-checkbox class="label pl-10">Sunday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Monday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Tuesday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Wednesday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Thursday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Friday</mat-checkbox>
+                                <mat-checkbox class="label pl-10">Saturday</mat-checkbox>
+                            </section>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="row p-10">
+        <button mat-raised-button color="primary">Confirm</button>
+    </div>
+</div>

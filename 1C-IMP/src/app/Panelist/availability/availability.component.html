@@ -1,0 +1,61 @@
+<h1 class="h1">Panel Availability</h1>
+<mat-divider></mat-divider>
+<div class="row p-10 float-r d-inBlock">
+  <!-- <div style="width: 3rem"></div> -->
+  <!-- <button mat-raised-button color="warn">Delete</button> -->
+  <button (click)="onSubmit();" mat-raised-button color="primary">Add
+    Availability</button>
+</div>
+<div class="pt-10 d-inBlock">
+  <div class="row">
+    <div class="interview-header">
+      <h2>My Skill Cluster:</h2>
+      <div class="pb-10"> 
+        <!-- Cluster-1 (.Net, Azure, SQL, Web API) -->
+        <mat-form-field>
+          <input type="text" matInput [matAutocomplete]="autoskill"
+              [formControl]="skillControl">
+          <mat-autocomplete #autoskill="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions  | async" [value]="option">
+                  {{option}}
+              </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <p-table [value]="availability" [paginator]="true" [rows]="5" selectionMode="single" [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,25,50]"
+    (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 3rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th>Date</th>
+        <th>From Time</th>
+        <th>To Time</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-availability>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="availability"></p-tableCheckbox>
+        </td>
+        <td>{{availability.date}}</td>
+        <td>{{availability.from}}</td>
+        <td>{{availability.to}}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage" let-column>
+      <tr>
+        <td>
+          No Record Found
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template *ngIf="showDelete == 1" pTemplate="footer">
+      <button pButton pRipple label="Delete" icon="pi pi-times" class="p-button-text"></button>
+    </ng-template>
+  </p-table>
+</div>

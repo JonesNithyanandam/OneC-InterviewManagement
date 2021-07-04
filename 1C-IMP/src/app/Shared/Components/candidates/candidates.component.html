@@ -1,0 +1,90 @@
+<div *ngIf="userType=='TSCUser'">
+    <h1 class="h1">Search Candidates</h1>
+    <mat-divider></mat-divider>
+    <div class="w-100 mt-10">
+        <form>
+            <mat-form-field class="w-20">
+                <input type="text" matInput [matAutocomplete]="auto" placeholder="Candidate Name"
+                    [formControl]="cNameControl">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of cNamefiltered | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="w-20 ml-25">
+                <input type="text" matInput [matAutocomplete]="autoskill" placeholder="Skill Cluster"
+                    [formControl]="skillControl">
+                <mat-autocomplete #autoskill="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions  | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>            
+            <mat-form-field class="w-20 ml-25">
+                <input type="text" matInput [matAutocomplete]="autostatus" placeholder="Status"
+                    [formControl]="statusControl">
+                <mat-autocomplete #autostatus="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredStatus  | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <mat-form-field class="w-20 ml-25">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                    <input matStartDate formControlName="start" placeholder="Start date">
+                    <input matEndDate formControlName="end" placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+                <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+            </mat-form-field>
+
+            <div class="ml-50 d-inBlock">
+                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <i class="material-icons" title="Search Candidate">search</i>
+                </button>
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <i class="material-icons" title="Refresh">refresh</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<h1 class="h1">Candidate Details</h1>
+<mat-divider></mat-divider>
+<div class="ml-25 mt-10">
+    <mat-card fxLayout.xs="column" class="list-card w-30 d-inBlock ml-15 vh-25" fxLayoutGap="20px"
+        *ngFor="let candidates of candidateDetails; last as last">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>
+                <div class="navlist-linkanger">
+                    <a class="f-18" title="Click to provide Feedback" routerLink="/landing/feedback">{{candidates.name}}</a>
+                </div>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <div class="d-inBlock pt-10">
+                    <span style="font-weight: bold;">Status: </span>
+                    <span *ngIf="candidates.Status=='Completed'" style="color: green;" >{{candidates.Status}}</span> 
+                    <br *ngIf="candidates.Status=='Completed'"><br *ngIf="candidates.Status=='Completed'"> 
+                    <span *ngIf="candidates.Status!='Completed'" style="color: red;" >{{candidates.Status}}</span> 
+                    <br *ngIf="candidates.Status!='Completed'"><br *ngIf="candidates.Status!='Completed'"> 
+                    <span style="font-weight: bold;">Phone: </span>
+                    <span>{{candidates.phone}}</span> <br>
+                </div>
+                <div class="d-inBlock pt-10 pl-10">
+                    <!-- <span style="font-weight: bold;">Date: </span> -->
+                    <!-- <i class="bi bi-calendar"></i> -->
+                    <img src="../../../../assets/images/calendar.svg" style="padding-right: 5px;">
+                    <span>{{candidates.scheduleDate}}</span> <br> <br> 
+                    <img src="../../../../assets/images/clock.svg" style="padding-right: 5px;">
+                    <!-- <i class="bi bi-clock"></i> -->
+                    <span>{{candidates.scheduleTime}}</span> <br>
+                </div>
+            </mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+</div>

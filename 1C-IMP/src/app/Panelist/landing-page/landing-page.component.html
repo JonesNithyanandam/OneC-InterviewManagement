@@ -1,0 +1,66 @@
+<div class="flex-height">
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav-content>
+            <!--/toolbar start-->
+            <mat-toolbar role="toolbar" class="main-header mat-elevation-z1 sticky-header">
+                <mat-toolbar-row>
+                    <button mat-button (click)="dashboardSidenavToggle(true)">
+                        <i class="material-icons color-white">menu</i>
+                    </button>
+                    <h2 class="header-text header-block cPointer" title="Panel Management">PANEL MANAGEMENT</h2>
+                    <!-- <a class="header-text header-block" title="Panel Management" >PANEL MANAGEMENT</a> -->
+                    <mat-chip-list class="ml-10">
+                        <mat-chip>{{currentURL}}</mat-chip>
+                    </mat-chip-list>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <!--/toolbar end-->
+            <div class="m-20" *ngIf="currentURL!='Dashboard'">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="m-20" *ngIf="currentURL=='Dashboard'">
+                <div>
+                    <div class="w-25" style="text-align: center;; margin-left: 40%; margin-top: 15%;">
+                        <mat-card class="dash d-inBlock">Dashboard</mat-card>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+<mat-sidenav #drawer [opened]="drawerExpanded" class="secondary-sidenav" style="border: 1px solid #b3b3b3;">
+    <div fxLayout="column" class="secondary-navarea">
+        <!-- Panel User Menus -->
+        <div fxFlexFill *ngIf="userType=='PanelUser'">
+            <div fxFlex fxLayout="column" fxLayoutGap="10px" class="secondary-areabox">
+                <div class="navlist-linkanger">
+                    <a (click)="navigate('candidates');">Candidate List</a>
+                    <a (click)="navigate('feedback');">FeedBack</a>
+                    <a (click)="navigate('availability');">Panel Availability</a>
+                </div>
+            </div>
+        </div>
+        <!-- TSC User Menus -->
+        <div fxFlexFill *ngIf="userType=='TSCUser'">
+            <div fxFlex fxLayout="column" fxLayoutGap="10px" class="secondary-areabox">
+                <div class="navlist-linkanger">
+                    <a (click)="navigate('candidates');">All Candidate List</a>
+                    <a (click)="navigate('candidatesentry');">Candidate Entry</a>
+                    <a (click)="navigate('schedule');">Schedule Interview</a>
+                    <a (click)="navigate('assigncand');">Assign Candidate</a>
+                    <a (click)="navigate('viewcandidate');">Candidate Status Search</a>
+                </div>
+            </div>
+        </div>
+        <!-- My Account -->
+        <div fxFlexFill>
+            <div fxFlex fxLayout="column" fxLayoutGap="10px" class="secondary-areabox">
+
+                <div class="mt-20 text-center">
+                    <button mat-raised-button color="primary" routerLink="/login" class="btn btn-small btn-signout">Sign
+                        Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-sidenav>
