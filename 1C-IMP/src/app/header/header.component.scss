@@ -1,0 +1,25 @@
+.toolstyle{
+    position: sticky;
+    top: 0;
+    background-color: #0033a0!important;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: x-large;
+    font-family: sans-serif;
+}
+.main-header{
+    width: 97%;
+}
+.addIcon{
+    font-size: 40px;
+    cursor: pointer;
+}
+.example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  

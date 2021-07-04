@@ -1,0 +1,27 @@
+.header {
+    height: 10%;
+    overflow: hidden;
+}
+.main-container {
+    position: absolute;
+    top: 10%;
+    bottom: 3%;
+    left: 0px;
+    right: 0px;
+    overflow: auto;
+    padding: 10px;
+    background-color: #e0e8ef;
+}
+.footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    background-color: blueviolet;
+    color: #ffff;
+    text-align: right;
+    padding-right: 15px;
+    font-size: 12px;
+    font-style: italic;
+}

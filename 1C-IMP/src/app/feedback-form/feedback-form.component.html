@@ -1,0 +1,116 @@
+<h1 class="h1">
+    Candidate Evaluation Sheet
+</h1>
+<mat-divider></mat-divider>
+<div class="w-100 mt-10">
+    <form>
+        <mat-form-field class="w-20">
+            <input type="text" matInput [matAutocomplete]="auto" placeholder="Search Candidate Name"
+                [formControl]="cNameControl">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of cNamefiltered | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <div class="ml-50 d-inBlock">
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                <i class="material-icons" title="Search Candidate">search</i>
+            </button>
+            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                <i class="material-icons" title="Refresh">refresh</i>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="row p-10 float-r d-inBlock">
+    <p-accordion>
+        <p-accordionTab header="Candidate Details" class="accTab" [selected]="true">
+            <div>
+                <p-table class="p-datatable table">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <td>Date:</td>
+                            <td>12/12/2020</td>
+
+                            <div style="width: 150px;"></div>
+                            <td>Penalist Id:</td>
+                            <td> <input type="number" class="w-100 ripple-solid" value="808390" title="808390"></td>
+                        </tr>
+                        <tr>
+                            <td> Candidate Id:</td>
+                            <td>124567</td>
+                            <div style="width: 150px;"></div>
+                            <td>Penalist Name:</td>
+                            <td> <input type="text" class="w-100 ripple-solid" value="Jones Nithyanandam"
+                                    title="Jones Nithyanandam"></td>
+                        </tr>
+                        <tr>
+                            <td>CandidateName:</td>
+                            <td>Nagomi Theoder Monagan</td>
+                            <div style="width: 150px;"></div>
+                            <td>View Profile:</td>
+                            <td> <a style="color: blue; text-decoration: underline; cursor: pointer;">Download
+                                    Resume</a>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </p-accordionTab>
+
+        <p-accordionTab header="Performance">
+            <p-table class="p-datatable" [value]="evalutionSummaryDetails">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Competency to be assessed</th>
+                        <th>
+                            Rating (1 Poor) to 4
+                        </th>
+                        <th>Comments \ Remarks</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-evalutionSummaryDetails>
+                    <tr>
+                        <td>{{evalutionSummaryDetails.competency}}</td>
+                        <td>
+                            <!-- <p-dropdown [options]="cities" optionLabel="name" [showClear]="true">
+                            </p-dropdown> -->
+                            <p-rating [(ngModel)]="currentRate" [cancel]="false"></p-rating>
+                        </td>
+                        <td>
+                            <input type="text" class="w-100 ripple-solid" placeholder="Enter your Comments">
+                            <!-- [value]="comments" -->
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+            <div class="row p-10">
+                <div class="col-md-2">
+                    <label class="labFB">Overall Feedback</label>
+                </div>
+                <div class="col-md-10 pb-10">
+                    <mat-radio-group aria-label="Select an option" class="labFB">
+                        <mat-radio-button value="1">Selected</mat-radio-button>
+                        <mat-radio-button class="pl-10" value="2">Rejected</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <!-- <div class="col-md-2">
+                <label class="labFB">Overall Feedback</label>
+            </div>
+            <div class="col-md-10">
+                <textarea class="w-100 labFB" pInputTextarea></textarea>
+            </div> -->
+                <div class="col-md-2">
+                    <label class="labFB">Comments :</label>
+                </div>
+                <div class="col-md-10">
+                    <textarea class="w-100 labFB" pInputTextarea></textarea>
+                </div>
+            </div>
+        </p-accordionTab>
+    </p-accordion>
+    <div class="row p-10">
+        <button (click)="onSubmit();" mat-raised-button color="primary">Submit</button>
+    </div>
+</div>

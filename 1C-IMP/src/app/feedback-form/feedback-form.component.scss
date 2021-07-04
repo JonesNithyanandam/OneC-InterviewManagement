@@ -1,0 +1,22 @@
+.p-datatable table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 50px;
+    font-size: 14px !important;
+}
+.headerbold {
+font-weight: bold;
+}
+.p-dropdown {
+  width: 14rem;
+}
+
+:host ::ng-deep .p-dropdown {
+  width: 14rem;
+}
+.accTab{
+  text-decoration: none;
+}
+.labFB{
+  font-size: 14px !important;
+}
