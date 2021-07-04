@@ -1,0 +1,38 @@
+<div class="row" style="margin: 10px;">
+  <h2>List of candidates</h2>
+<mat-card class="example-card" *ngFor="let candidates of candidateDetails; last as last">
+  <div class="row">
+    <div class="col-md-11" style="color: slateblue;">
+      <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{candidates.name}}</mat-card-title>
+          <mat-card-subtitle>
+            <span>{{candidates.expertise}}</span> <br>
+            <span>{{candidates.Totalexp}}</span> <br>
+            <span>{{candidates.phone}}</span> <br>
+            <span style="font-weight: bold;">Status: </span>
+            <span>{{candidates.Status}}</span> <br>
+          </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <span style="font-weight: bold;">Current Company: </span>
+        <span>{{candidates.currentCompany}}</span> <br>
+        <span style="font-weight: bold;">Schedule Time: </span>
+        <span>{{candidates.scheduleTime}}</span> <br>
+        <span style="font-weight: bold;">Description: </span>
+        <span>{{candidates.shortDescription}}</span>
+      </mat-card-content>
+    </div>
+    <div class="col-md-1" style="text-align: right;">
+      <button mat-icon-button [matMenuTriggerFor]="menu" style="border: none;
+      background: none;" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <a mat-button mat-menu-item routerLink="/feedback">Feedback</a>
+        <a mat-button mat-menu-item href="https://www.google.com/" target="_blank">View More</a>
+        <a mat-button mat-menu-item href="https://www.google.com/" target="_blank">View Resume</a>
+      </mat-menu>
+    </div>
+  </div>
+</mat-card> 

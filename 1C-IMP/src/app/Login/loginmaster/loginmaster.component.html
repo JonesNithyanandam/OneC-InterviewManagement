@@ -1,0 +1,29 @@
+<div class="flex-height">
+    <div class="login-container">
+        <section fxLayoutAlign="space-around center" class="pt-30">
+            <div class="container" fxFlex="100%" fxLayout.xs="column" fxLayout.md="row">
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50" fxFlex.xs="100">
+                    <span>Panel Management</span>
+                </div>
+                <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50" fxFlex.xs="100" fxLayoutAlign="end stretch">
+
+                </div>
+            </div>
+        </section>
+        <router-outlet></router-outlet>
+    </div>
+    <footer class="footer-fixed">
+        <div fxFlex="100%" fxLayout="row" fxLayout.xs="column" fxLayout.md="row" fxLayoutGap="30px">
+            <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="30" fxFlex.xs="100">
+                <div class="footer-helpbox">
+                    <a class="role-help">Need Help?</a>
+                </div>
+            </div>
+            <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="70" fxFlex.xs="100">
+                <p class="role-copywright">
+                    © All Rights Reserved / Powered by Jones
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>

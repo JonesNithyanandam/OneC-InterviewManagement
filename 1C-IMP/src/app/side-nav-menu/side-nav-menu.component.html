@@ -1,0 +1,26 @@
+<div class="sideNav-container">
+    <mat-toolbar color="primary" class="sideNav-toolbar">
+        <button mat-icon-button class="icon-button" (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="sideNav-app-name">Panel Management</h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="sideNav-sidenav-container" [style.marginTop.px]="0">
+        <mat-sidenav #snav mode="over" fixedTopGap="56" class="sideNav-menu">
+            <!-- <mat-nav-list>
+                <a mat-button #menu mat-menu-item *ngFor="let nav of fillerNav">{{nav.nav}}</a>
+            </mat-nav-list> -->
+            <button mat-button mat-menu-item routerLink="/feedback">Feedback</button>
+            <button mat-button mat-menu-item href="https://www.google.com/" target="_blank">View More</button>
+            <button mat-button mat-menu-item href="https://www.google.com/" target="_blank">View Resume</button>
+            <mat-menu #menu="matMenu">
+              
+              </mat-menu>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

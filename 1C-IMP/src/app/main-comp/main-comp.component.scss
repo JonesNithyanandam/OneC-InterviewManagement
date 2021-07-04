@@ -1,0 +1,29 @@
+.example-card {
+    width: 100%;
+    border: 1px solid #dac4c4;
+    padding: 5px;
+    margin-bottom: 8px;
+    padding: 10px;
+  }
+section {
+   display: table;
+ }
+.example-label {
+   display: table-cell;
+   font-size: 14px;
+   margin-left: 8px;
+   min-width: 120px;
+ }
+ .example-button-row {
+   display: table-cell;
+   width: 490px;
+ }
+ .example-button-row .mat-button-base {
+   margin: 8px 8px 8px 0;
+ }
+ .example-header-image {
+  background-image: url('/assets/user.jpg');
+  background-size: cover;
+  height: 75px;
+  width: 75px;
+}

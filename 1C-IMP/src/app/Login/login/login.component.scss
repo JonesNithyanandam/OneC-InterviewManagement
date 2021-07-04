@@ -1,0 +1,31 @@
+.orgName{
+    // position: absolute;
+    font-size: 20px!important;
+    padding-left: 0!important;
+    padding-right: 10px;
+    font-weight: 600;
+    width: 260px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    left: 50px;
+    font-family: CognizantSans-Bold!important;
+    padding-top: 2px;
+    cursor: pointer;
+    line-height: 43px!important;
+    text-decoration: none;
+    color: #ffffff;
+    padding-right: 5px;
+}
+.orgLogo{
+    // position: absolute;
+    width: 36px;
+    // background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABHNCSVQICAgIfAhkiAAAA+RJREFUWEe1mE1sTFEUx/930xDTpO1GiY9JUB8LnSA2JJ1ZjUWHiliw0S58bbSUjZDOLInKWFUrtBYsaKLUgkjaGUGCYrogaVVaJFqbKq2Ssbjyf/Pe65vPe5+OmzSdmXfuO793zv+ec98VcDmklGUAdgGoA8DP/POZt0kAmAIwBiAG4K4Qgt+1h9C1lFISoBGAX3eOaUewiBCC/5VDCSSlJEDLP4BkOtcCKwgkpewEUK98LHcGUSHE8XxTcgKZOrlThKjk88to7c6lrywgE6bfIVR3z69vzQUQyITKBUQYt8LVx0i3jAkhAs6f0oD+k2ZUsJeEEE2WkQ1kriZGJ+84dwu40Ze6vHkN0Nms8qV9nakzyoITqGCqnDC5gMa+zODj+E+boLqqHGWlJbpEduoMILPocVVljcY2YGAYmP6VfunUXiC0NYnr9z+gq3cEieHJrLm+qgo07d+AA7WrdMCMKFlADFdNrlkbj6T/6lkAXGsGfs9OYvfJfoyNzyid+TdXorNlG7xLPYVs40IIvzCX+bd8lg2tc1devQeungDeDo2gIfJUCeI0KPOUoL89CN/aikLzygnESsyKrBzUUbB6EoHDDzE1k7TtV1YuQviwD4wEoxAbmDBSGL35Dh8n5nR150IAdf4Vhfw0EKjH7N5KoB+zwM6mB4i//mrbUh9d4e05505NJ9HU+sLQGVNWH1qt8nGdQHn1kzm7J/bJ0I01ajYtRqxjh8qJETH/lkqlHYA4gd7oton68BPjaa3Rfzmo60gHhjYJAklda/+h9HTJgQO6U7XtXAF5a7ttkeqmS5vENCQQu261zkRnhLxLPBjt3aMzzY3NoCtR1zX34W78s+1g9N4eVbFzA0NbQ9RdALTEwBbhLIgtB6uN+lPEYSx77cLIuuINdeP7zB+b4c2NUMHqmxhKtRgWRUWV5j2NwsjXmLytw/n0fQng8fMEIlcG7Z/ZEhilxn3rswLFSh3pGDSqOu2oOcUOoFzZXJ1egqeB22eAY+fT6xFt6JARoNjZcBkZZ3uhjSLFqeZKQ53NGe3Y+dcuAy4eTOJsW6ol6A4Nvc1tP0woZQuxtiKEih4FHj0bQbg9kdZAMwFZr8KHfKqKbkSHc11tYV8Oz7krXQisW576zvSwzzFV3Dmy4zN17OwaQuYtsrewZpSi5uuybiaKYZd7k2/d2U33LwKNnSrrXvleFKknrXYyDyjWDr/yRdFMHWsTN24599nzgLCmxnmco/Uq7XQmpfwfmkrTTObD6R7HhIsQLUYlrDonUgI5xM468S9gWiB5Ra3Sh9n7eJpGQK95pGctAArVeaTX4/ZI7y/ya5ZNQH1zrwAAAABJRU5ErkJggg==) no-repeat;
+    background-size: 32px;
+    background-position-y: center;
+    background-position-x: center;
+    left: 4px;
+    cursor: pointer;
+    outline: none;
+    margin-right: 5px;
+}

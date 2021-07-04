@@ -1,0 +1,40 @@
+<div class="flex-height" style="background-color: #0033a0;">
+    <section fxLayoutAlign="space-around center" class="pt-30">
+        <div class="container" fxFlex="100%" fxLayout.xs="column" fxLayout.md="row">
+            <div fxFlex="50%" fxFlex.md="50%" fxFlex.sm="50" fxFlex.xs="100">
+               <img class="orgLogo" src="assets/images/logo.png">
+               <a class="orgName">Cognizant</a>
+            </div>
+        </div>
+    </section>
+    <form (ngSubmit)="onLoginSubmit()" [formGroup]="loginForm" autocomplete='off'>
+        <div class="container mt-30 role-select-box">            
+            <div fxLayout="row" fxLayout.md="row" fxLayout.sm="row" fxLayout.xs="column" fxFlex="84%" fxFlex.md="90%"
+                fxFlex.sm="100%" fxFlex.xs="100%">
+                <div fxFlex="35%" fxFlex.md="40%" fxFlex.sm="40%" fxFlex.xs="100%">
+                    <h1 class="color-white">Login</h1>
+                </div>
+                <div fxFlex="40%" fxFlex.md="40%" fxFlex.sm="100%" fxFlex.xs="100%" class="mlp-10">
+                    <mat-form-field class="w-100 ripple-solid">
+                        <input matInput placeholder="Username" autocomplete="off" role="presentation"
+                            class="color-white" type="text" tabindex="1" formControlName="userName"
+                            [(ngModel)]="login.userName" maxlength="40" autocomplete="off" role="presentation">
+                    </mat-form-field>
+                    <mat-form-field class="w-100 ripple-solid">
+                        <input matInput placeholder="Password" autocomplete="off" role="presentation"
+                            class="color-white" type="password" tabindex="2" formControlName="password"
+                            [(ngModel)]="login.password" maxlength="40" autocomplete="new-password" role="presentation"
+                            preventCutCopyPaste>
+                        <mat-hint>{{errorMessage}}</mat-hint>
+                    </mat-form-field>
+                    <div fxLayoutAlign="start center">
+                        <button mat-raised-button class="login-btn" type="submit" value="Submit" tabindex="3"
+                            [disabled]="!loginForm.valid">
+                            Log In
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
